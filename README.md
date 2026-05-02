@@ -2,6 +2,31 @@
 
 IndiaVotes is a production-ready web platform designed to educate Indian citizens about the democratic process, from national Lok Sabha elections to local municipal polls. It combines real-time data accessibility with deep educational insights.
 
+## 🎯 Challenge Details (#BuildWithAI)
+
+### Chosen Vertical
+**Civic Education & Voter Empowerment**
+This project addresses the critical need to simplify the complex Indian electoral process for first-time and confused voters. By providing interactive, state-specific information and an AI-driven guide, the platform bridges the gap between civic duty and accessible technology.
+
+### Approach and Logic
+The solution is built around a **Context-Aware Voter Journey State Machine**. Instead of a simple Q&A bot, the integrated "Voter Mitra AI" tracks the user's progress through defined stages:
+1. **Onboarding**: Determining intent.
+2. **Eligibility Checking**: Validating age and citizenship.
+3. **Registration**: Guiding through the Electoral Roll and EPIC card requirements.
+4. **Verification**: Locating the polling booth.
+This logical decision-making tree ensures that the assistant provides highly relevant, actionable advice tailored to the user's specific context.
+
+### How the Solution Works
+1. **Interactive Educational UI**: Users can explore the electoral timeline, understand the technology behind voting (EVM/VVPAT), and check requirements for their specific state assembly or the national Lok Sabha using the glassmorphism-styled dashboard.
+2. **Voter Mitra AI**: A dynamic chat assistant (accessible via the floating action button) that uses the predefined state logic to converse with users and guide them toward voter readiness.
+3. **Google Services Integration**: The application uses Firebase Analytics and App Check to securely track engagement telemetry without compromising user privacy.
+4. **Lightweight Deployment**: Packaged in an ultra-slim multi-stage Docker build (`nginx:alpine-slim`), the repository remains well under the 10MB challenge limit and deploys instantly on Google Cloud Run.
+
+### Assumptions Made
+- **Real-Time Results Handoff**: We assume that displaying actual live polling data requires direct sourcing from the Election Commission of India (ECI) to prevent misinformation. Thus, the app uses official handoff links for live results.
+- **AI Processing**: In a production environment, the frontend AI logic would be handled by a secure backend calling the Google Gemini API. For the scope of this static challenge submission, the AI decision-making logic is safely simulated client-side to demonstrate the persona and journey architecture without requiring backend billing setup.
+- **Firebase Keys**: The Firebase configuration is included in the source for evaluation purposes only, assuming standard environment variable injection in a fully scaled production pipeline.
+
 ## Live Demo
 🚀 **Deployed on Cloud Run**: [https://indiavotes-22955952304.us-central1.run.app](https://indiavotes-22955952304.us-central1.run.app)
 
