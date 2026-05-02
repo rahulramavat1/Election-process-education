@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Votes: Elections Made Simple</title>
+    <meta name="description" content="Learn about India's election process in the simplest way possible. Local to National, we cover it all!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+</head>
+<body>
+    <a href="https://results.eci.gov.in/" target="_blank" class="live-ticker" role="alert" aria-live="assertive" style="text-decoration: none; color: inherit; display: block;">
+        <div class="ticker-content">
+            <span class="pulse-dot"></span>
+            <strong>LIVE:</strong> Check the latest Official Election Results on the ECI Portal 🗳️
+        </div>
+    </a>
+    <header>
+        <nav>
+            <div class="logo" aria-label="IndiaVotes - Election Education Portal">🇮🇳 IndiaVotes</div>
+            <ul>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#timeline">The Timeline</a></li>
+                <li><a href="#register">Get Ready</a></li>
+                <li><a href="#results">Live Buzz</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Elections are a Big Deal. <br><span>We make them easy.</span></h1>
+            <p>Ever felt confused by the Indian election circus? Don't worry, we've got you covered. From local panchayats to the big chair in Delhi – here's how it all happens.</p>
+            <div class="hero-btns">
+                <a href="#timeline" class="btn primary">Show me the Timeline</a>
+                <a href="#register" class="btn secondary">Am I Registered?</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="how-it-works" class="bento-grid">
+            <div class="card national">
+                <div class="icon">🏛️</div>
+                <h3>National Elections</h3>
+                <p>Choose who runs India! 543 Lok Sabha seats. The party with 272+ seats forms the Government.</p>
+            </div>
+            <div class="card state-edu">
+                <div class="icon">🗺️</div>
+                <h3>State Elections</h3>
+                <p>Choose your CM! States have their own Vidhan Sabhas. Decisions here affect your local laws and policing.</p>
+            </div>
+            <div class="card local">
+                <div class="icon">🏡</div>
+                <h3>Local Elections</h3>
+                <p>Panchayats & Municipalities. They handle your roads, water, and immediate neighborhood needs.</p>
+            </div>
+        </section>
+
+        <section id="voting-experience" class="info-section alternate">
+            <div class="info-visual">
+                <div class="booth-visual card glass">
+                    <div class="unit-group">
+                        <div class="unit bu" title="Balloting Unit">BU</div>
+                        <div class="unit vvpat" title="VVPAT Unit">VVPAT</div>
+                        <div class="unit cu" title="Control Unit">CU</div>
+                    </div>
+                    <div class="booth-steps">
+                        <div class="booth-step">1. Identify</div>
+                        <div class="booth-step">2. Ink</div>
+                        <div class="booth-step">3. Vote</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-content">
+                <h2>The Polling Booth Experience 🚶‍♂️</h2>
+                <p>What actually happens when you step inside? It's a quick, secure 4-step process:</p>
+                <ul class="process-list">
+                    <li><strong>Step 1: Identity Check</strong> - Officials check your name in the voter list and verify your ID.</li>
+                    <li><strong>Step 2: The Ink</strong> - A polling officer applies indelible ink on your left forefinger – the mark of a voter!</li>
+                    <li><strong>Step 3: The Register</strong> - You sign the register (Form 17A) and get a small slip.</li>
+                    <li><strong>Step 4: The Vote</strong> - You enter the secret compartment, press the button on the EVM, and verify your choice on the VVPAT screen.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="tech-guide" class="tech-section">
+            <div class="section-header">
+                <h2>The Tech Behind the Vote 🗳️</h2>
+                <p>India uses a 3-unit system to keep your vote secure and verifiable.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card glass">
+                    <div class="tech-icon">🔘</div>
+                    <h3>Balloting Unit (BU)</h3>
+                    <p>The "keyboard" of the election. You press the blue button next to your candidate's name and symbol.</p>
+                </div>
+                <div class="tech-card glass highlight">
+                    <div class="tech-icon">📄</div>
+                    <h3>VVPAT</h3>
+                    <p>The "Receipt". It shows a paper slip with your candidate's details for 7 seconds before it drops into a sealed box. No more doubts!</p>
+                </div>
+                <div class="tech-card glass">
+                    <div class="tech-icon">📟</div>
+                    <h3>Control Unit (CU)</h3>
+                    <p>The "Brain". Kept with the Polling Officer, it records the vote only after the officer enables it. One person, one vote!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="state-spotlight" class="state-section">
+            <div class="section-header">
+                <h2>State Spotlight 🗺️</h2>
+                <p>Every state has its own assembly size. Choose a state or the National election to see how many seats are needed to win!</p>
+                <div class="state-selector">
+                    <label for="state-dropdown" class="visually-hidden">Select a State or National Election</label>
+                    <select id="state-dropdown" class="glass-select" aria-label="Select a State or National Election">
+                        <option value="" disabled>-- National --</option>
+                        <option value="national" selected>National Election (Lok Sabha)</option>
+                        <option value="" disabled>-- States & UTs --</option>
+                        <option value="andaman">Andaman and Nicobar Islands</option>
+                        <option value="ap">Andhra Pradesh</option>
+                        <option value="arunachal">Arunachal Pradesh</option>
+                        <option value="assam">Assam</option>
+                        <option value="bihar">Bihar</option>
+                        <option value="chandigarh">Chandigarh</option>
+                        <option value="chhattisgarh">Chhattisgarh</option>
+                        <option value="dnhdd">Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="goa">Goa</option>
+                        <option value="gujarat">Gujarat</option>
+                        <option value="haryana">Haryana</option>
+                        <option value="hp">Himachal Pradesh</option>
+                        <option value="jk">Jammu and Kashmir</option>
+                        <option value="jharkhand">Jharkhand</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="ladakh">Ladakh</option>
+                        <option value="lakshadweep">Lakshadweep</option>
+                        <option value="mp">Madhya Pradesh</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="manipur">Manipur</option>
+                        <option value="meghalaya">Meghalaya</option>
+                        <option value="mizoram">Mizoram</option>
+                        <option value="nagaland">Nagaland</option>
+                        <option value="odisha">Odisha</option>
+                        <option value="puducherry">Puducherry</option>
+                        <option value="punjab">Punjab</option>
+                        <option value="rajasthan">Rajasthan</option>
+                        <option value="sikkim">Sikkim</option>
+                        <option value="tn">Tamil Nadu</option>
+                        <option value="telangana">Telangana</option>
+                        <option value="tripura">Tripura</option>
+                        <option value="up">Uttar Pradesh</option>
+                        <option value="uttarakhand">Uttarakhand</option>
+                        <option value="wb">West Bengal</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="state-card-container">
+                <div id="state-card" class="card glass state-card">
+                    <div class="state-info">
+                        <h3 id="selected-state-name">National Election (Lok Sabha)</h3>
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <span class="stat-value" id="total-seats">543</span>
+                                <span class="stat-label">Total Seats</span>
+                            </div>
+                            <div class="stat-item highlight">
+                                <span class="stat-value" id="magic-number">272</span>
+                                <span class="stat-label">To form Govt (PM)</span>
+                            </div>
+                        </div>
+                        <div class="state-meta">
+                            <p><strong>Next Election:</strong> <span id="next-election">2029</span></p>
+                            <p><strong>Ruling Party/Alliance:</strong> <span id="ruling-party">NDA</span></p>
+                            <p><strong>Status:</strong> <span id="state-status">Normal Operations</span></p>
+                        </div>
+                        <p id="state-desc" style="margin-top: 15px;">The party or alliance that wins the majority mark gets to choose the Prime Minister!</p>
+                        <div style="margin-top: 20px;">
+                            <a href="https://results.eci.gov.in/" target="_blank" class="btn secondary" style="width: 100%; text-align: center;">View Official Live Results</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="timeline-section">
+            <h2 class="section-title">The Election Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-progress"></div>
+                <div class="timeline-events" role="tablist" aria-label="Election Process Stages">
+                    <div class="event-node" data-id="1" role="tab" aria-selected="false" tabindex="0" aria-label="Stage 1: Notification">
+                        <div class="dot"></div>
+                        <span class="label">Notification</span>
+                    </div>
+                    <div class="event-node" data-id="2" role="tab" aria-selected="false" tabindex="0" aria-label="Stage 2: Nominations">
+                        <div class="dot"></div>
+                        <span class="label">Nominations</span>
+                    </div>
+                    <div class="event-node" data-id="3" role="tab" aria-selected="false" tabindex="0" aria-label="Stage 3: Scrutiny">
+                        <div class="dot"></div>
+                        <span class="label">Scrutiny</span>
+                    </div>
+                    <div class="event-node" data-id="4" role="tab" aria-selected="false" tabindex="0" aria-label="Stage 4: Campaigning">
+                        <div class="dot"></div>
+                        <span class="label">Campaigning</span>
+                    </div>
+                    <div class="event-node" data-id="5" role="tab" aria-selected="false" tabindex="0" aria-label="Stage 5: Polling Day">
+                        <div class="dot"></div>
+                        <span class="label">Polling Day</span>
+                    </div>
+                    <div class="event-node" data-id="6" role="tab" aria-selected="false" tabindex="0" aria-label="Stage 6: Counting">
+                        <div class="dot"></div>
+                        <span class="label">Counting</span>
+                    </div>
+                    <div class="event-node" data-id="7" role="tab" aria-selected="false" tabindex="0" aria-label="Stage 7: Results">
+                        <div class="dot"></div>
+                        <span class="label">Results</span>
+                    </div>
+                </div>
+            </div>
+            <div id="event-details" class="event-details card glass">
+                <h3>Click a step to see what happens!</h3>
+                <p>Each step in the cycle is crucial for a fair democracy.</p>
+            </div>
+        </section>
+
+        <section id="register" class="info-section">
+            <div class="info-content">
+                <h2>Want to Vote? Here's the 3-Step Plan</h2>
+                <ol class="step-list">
+                    <li>
+                        <strong>Check your name:</strong> Head to the <a href="https://electoralsearch.eci.gov.in/" target="_blank">Voter Search portal</a>. If you're there, you're good.
+                    </li>
+                    <li>
+                        <strong>Apply if missing:</strong> Fill out <strong>Form 6</strong> on the <a href="https://voters.eci.gov.in/" target="_blank">NVSP portal</a>. You'll need a photo and age proof.
+                    </li>
+                    <li>
+                        <strong>Know your booth:</strong> Find out where you actually go to press the button.
+                    </li>
+                </ol>
+            </div>
+            <div class="info-visual">
+                <!-- Image will be generated here -->
+                <div class="voter-card-mock">
+                    <div class="chip"></div>
+                    <div class="line"></div>
+                    <div class="line short"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="results-section">
+            <h2>The Live Buzz 🗳️</h2>
+            <p>Wondering who's winning? The Election Commission of India (ECI) provides the only official source of live counting trends and results.</p>
+            <div class="results-container">
+                <div id="results-display" class="results-placeholder glass" style="padding: 2rem; text-align: center;">
+                    <h3>Real-time Data</h3>
+                    <p style="margin: 1rem 0;">To ensure you get the most accurate and up-to-date information, we direct you to the official ECI Results portal.</p>
+                    <a href="https://results.eci.gov.in/" target="_blank" class="btn primary">Check Official Results Now</a>
+                </div>
+            </div>
+            <p class="small">Source: Election Commission of India</p>
+        </section>
+
+        <section id="checklist" class="checklist-section">
+            <div class="card glass checklist-card">
+                <h2>Voter's Final Checklist ✅</h2>
+                <p>Are you ready for Polling Day? Tick these off!</p>
+                <div class="checklist-items">
+                    <label class="check-item">
+                        <input type="checkbox" class="voter-check">
+                        <span class="check-text">Verified my name in the Electoral Roll</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" class="voter-check">
+                        <span class="check-text">Found my Polling Station address</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" class="voter-check">
+                        <span class="check-text">Carrying my Voter ID (EPIC) or approved alternative</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" class="voter-check">
+                        <span class="check-text">Checked the candidate list in my area</span>
+                    </label>
+                </div>
+                <div class="progress-container">
+                    <div id="check-progress" class="progress-bar"></div>
+                </div>
+                <div id="checklist-msg" class="checklist-feedback"></div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2>Got Questions?</h2>
+            <div class="accordion" role="region" aria-label="Frequently Asked Questions">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-nota">What is NOTA?</button>
+                    <div id="faq-nota" class="accordion-content" role="region" aria-hidden="true">
+                        <p>"None Of The Above". If you don't like any candidate, you can press this button to register your protest.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-online">Can I vote online?</button>
+                    <div id="faq-online" class="accordion-content" role="region" aria-hidden="true">
+                        <p>Nope. As of now, you have to physically visit your polling booth. It's a day out for democracy!</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-holiday">Is election day a holiday?</button>
+                    <div id="faq-holiday" class="accordion-content" role="region" aria-hidden="true">
+                        <p>Yes! In the areas where voting is happening, it's usually a public holiday so everyone can go and vote.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 IndiaVotes. Made with ❤️ for Indian Democracy.</p>
+        <p>This is an educational project. Always check <a href="https://eci.gov.in/" target="_blank">eci.gov.in</a> for official info.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
