@@ -349,6 +349,24 @@
         <p>This is an educational project. Always check <a href="https://eci.gov.in/" target="_blank">eci.gov.in</a> for official info.</p>
     </footer>
 
+    <!-- AI Chatbot UI (Voter Mitra) -->
+    <button id="ai-toggle" class="ai-fab" aria-label="Open AI Assistant" aria-expanded="false" aria-controls="chat-window">💬</button>
+    
+    <div id="chat-window" class="chat-window hidden" role="dialog" aria-labelledby="chat-title" aria-modal="false" aria-hidden="true">
+        <div class="chat-header">
+            <h3 id="chat-title">Voter Mitra AI</h3>
+            <button id="close-chat" aria-label="Close AI Assistant">✕</button>
+        </div>
+        <div id="chat-messages" class="chat-messages" aria-live="polite" aria-atomic="false" aria-relevant="additions text">
+            <div class="message bot">Hello! I'm Voter Mitra. Ask me anything about elections, voter eligibility, or registration!</div>
+        </div>
+        <div class="chat-input-area">
+            <label for="user-input" class="visually-hidden">Type your message for Voter Mitra</label>
+            <input type="text" id="user-input" placeholder="Type your message..." aria-label="Message input for AI">
+            <button id="send-msg" aria-label="Send message to AI">Send</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

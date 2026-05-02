@@ -145,11 +145,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chat-messages');
 
     aiToggle.addEventListener('click', () => {
-        chatWindow.classList.toggle('hidden');
+        const isHidden = chatWindow.classList.toggle('hidden');
+        aiToggle.setAttribute('aria-expanded', !isHidden);
+        chatWindow.setAttribute('aria-hidden', isHidden);
+        if (!isHidden) {
+            userInput.focus();
+        }
     });
 
     closeChat.addEventListener('click', () => {
         chatWindow.classList.add('hidden');
+        aiToggle.setAttribute('aria-expanded', 'false');
+        chatWindow.setAttribute('aria-hidden', 'true');
+        aiToggle.focus();
     });
 
     async function handleChat() {
