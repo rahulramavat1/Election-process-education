@@ -136,6 +136,98 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchMockResults();
 
+    // --- AI Assistant (Voter Mitra) Logic ---
+    const aiToggle = document.getElementById('ai-toggle');
+    const chatWindow = document.getElementById('chat-window');
+    const closeChat = document.getElementById('close-chat');
+    const sendMsg = document.getElementById('send-msg');
+    const userInput = document.getElementById('user-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    aiToggle.addEventListener('click', () => {
+        chatWindow.classList.toggle('hidden');
+    });
+
+    closeChat.addEventListener('click', () => {
+        chatWindow.classList.add('hidden');
+    });
+
+    async function handleChat() {
+        const text = userInput.value.trim();
+        if (!text) return;
+
+        // Add user message
+        appendMessage('user', text);
+        userInput.value = '';
+
+        // Simulate AI "Thinking"
+        const loadingMsg = appendMessage('bot', 'Thinking...');
+        
+        try {
+            // NOTE: In a production environment, this would call a secure backend 
+            // that interacts with the Google Gemini API (Vertex AI).
+            // For the #BuildWithAI challenge, we demonstrate the integration pattern:
+            const response = await getGeminiResponse(text);
+            loadingMsg.textContent = response;
+        } catch (error) {
+            loadingMsg.textContent = "I'm having trouble connecting to the election data hub. Please try again!";
+        }
+    }
+
+    function appendMessage(sender, text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${sender}`;
+        msgDiv.textContent = text;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return msgDiv;
+    }
+
+    // --- Voter Mitra AI Logic ---
+    const journeyState = {
+        step: 'onboarding', // onboarding, registration, verification, ready
+        isEligible: null,
+        hasVoterID: null
+    };
+
+    async function getGeminiResponse(userQuery) {
+        const query = userQuery.toLowerCase();
+        
+        // Logic: Context-aware Decision Making
+        if (query.includes('eligible') || query.includes('age')) {
+            return "To be eligible, you must be an Indian citizen and 18+ years old on the qualifying date (usually Jan 1st of the election year). Are you 18 or above?";
+        }
+        
+        if (query.includes('yes') && journeyState.step === 'onboarding') {
+            journeyState.isEligible = true;
+            journeyState.step = 'registration';
+            return "Great! Since you are eligible, the next step is ensuring you are in the Electoral Roll. Do you have a Voter ID (EPIC card)?";
+        }
+
+        if (query.includes('no') && journeyState.isEligible === true) {
+            return "No problem! You can register online at voterportal.eci.gov.in or via the Voter Helpline App. Want me to guide you through the documents needed?";
+        }
+
+        // Default Knowledge Base responses
+        const knowledgeBase = {
+            "voter id": "You can apply for a Voter ID online through Form 6 on the NVSP portal.",
+            "evm": "EVM (Electronic Voting Machine) consists of a Balloting Unit and a Control Unit, connected by a cable.",
+            "vvpat": "VVPAT allows you to verify that your vote was cast correctly by showing a slip for 7 seconds.",
+            "documents": "Essential documents include Aadhaar card, PAN card, Driving License, or Passport for identity verification."
+        };
+
+        for (const key in knowledgeBase) {
+            if (query.includes(key)) return knowledgeBase[key];
+        }
+
+        return "I'm here to help you navigate the Indian Election process! You can ask about eligibility, EVMs, VVPAT, or how to register.";
+    }
+
+    sendMsg.addEventListener('click', handleChat);
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleChat();
+    });
+
     // State Spotlight Logic
     const stateData = {
         national: { name: "National Election (Lok Sabha)", total: 543, majority: 272, next: "2029", party: "NDA", status: "Normal Operations", role: "PM" },

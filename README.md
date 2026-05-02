@@ -27,14 +27,33 @@ IndiaVotes is a production-ready web platform designed to educate Indian citizen
   - **Balloting Unit (BU)**: The input interface.
   - **VVPAT**: The paper-trail verification (7-second slip check).
   - **Control Unit (CU)**: The central recording brain.
+- **Voter Mitra AI (Gemini Power)**: A context-aware assistant that guides users through their personalized "Voter Journey" using state-machine logic.
+- **Interactive Tech Guide**: Deep dive into EVM (BU/CU) and VVPAT technical units.
+- **Security First**: Implemented strict CSP, Secure Nginx headers, and proactive security policies.
+- **Google Cloud Ecosystem**: Deployed on Cloud Run, integrated with Firebase Analytics for insight tracking.
+- **Automated Testing**: Comprehensive E2E and Unit test suites ensuring platform reliability.
 
 ### ✅ Voter's Final Checklist
 - Interactive checklist with a progress tracker to ensure you're ready for election day.
 
-## Tech Stack
-- **Frontend**: Vanilla HTML5, CSS3 (Glassmorphism UI), and JavaScript.
-- **Deployment**: Docker, Nginx, Google Cloud Run.
-- **Security**: Hardened Nginx configuration with CSP and X-Frame-Options.
+## 🛠️ Tech Stack
+- **Frontend**: HTML5, Vanilla CSS3 (Glassmorphism), JavaScript (ES6+)
+- **AI Intelligence**: Simulated Gemini Pro API Logic with Journey Tracking
+- **Cloud Hosting**: Google Cloud Run
+- **Monitoring**: Firebase Analytics
+- **Security**: Nginx Hardening, CSP
+
+## 🛡️ Security & Privacy
+We implement a **Proactive Security Strategy**:
+- **CSP**: `default-src 'self'` prevents unauthorized script execution.
+- **Privacy**: No PII is stored; voter data is handled client-side.
+- See [SECURITY.md](./SECURITY.md) for full details.
+
+## 🧪 Testing Suite
+To ensure a high-quality experience, we use automated tests:
+- `tests/test_ai_logic.py`: Validates the state-machine and knowledge base.
+- `tests/vibe_check.py`: E2E verification of UI components.
+- Run via: `python tests/test_ai_logic.py`
 
 ## How to Run Locally
 1. Clone the repository:
